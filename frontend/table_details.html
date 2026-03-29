@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Table Details</title>
+    <link rel="stylesheet" href="table_details.css" />
+    <script src="table_details.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 id="tableTitle"></h1>
+        <button id="insertButton">Insert</button>
+        <button id="deleteButton">Delete</button>
+        <button id="select">Select</button>
+        <button id="goBack">Back</button>
+    </header>
+
+    <main>
+        <div id="tableStructure"></div>
+
+         <div class="popup insertPopup">
+            <div class="closeButton">&times;</div>
+            <h2>Insert Values</h2>
+            <button id="addButton">+</button>
+            <div class="cardContainer"></div>
+            <button id="insert">Insert</button>
+        </div>
+
+        <div class="popup deletePopup">
+            <div class="closeButton">&times;</div>
+            <h2>Delete rows</h2>
+
+            <div class="delete-section">
+                <button id="addConditionBtn" type="button">+ Add Condition</button>
+                <div id="conditionContainer" class="deleteWhere"></div>
+            </div>
+
+            <button id="delete" type="button">Delete Rows</button>
+        </div>
+
+        <div id="indexHeader">
+            <h2>Indexes</h2>
+            <button id="createIndex">Create Index</button>
+            <button id="dropIndex">Drop Index</button>
+        </div>
+        <div id="indexStructure"></div>
+
+        <div id="foreignHeader">
+            <h2>Foreign Keys</h2>
+        </div>
+        <div id="foreignKeysContainer"></div>
+    </main>
+</body>
+</html>

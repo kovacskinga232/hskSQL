@@ -1,0 +1,7 @@
+databases.json
+*.pyc
+.env
+__pycache__/
+*.txt
+settings.json
+.vscode/

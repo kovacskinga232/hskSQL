@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Tables</title>
+    <link rel="stylesheet" href="tables.css">
+</head>
+<body>
+    <header>
+        <h1>hskSQL Database Manager</h1>
+        <nav>
+            <button id="createTable">Create table</button>
+            <button id="dropTable">Drop table</button>
+            <button id="goBack">Choose another database</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="dbName"></h1>
+
+        <div class="popup createPopup">
+            <div class="closeButton">&times;</div>
+            <h2>Create table</h2>
+            <label>Table name:
+                <input type="text" id="tableName" placeholder="Enter table name">
+            </label>
+            <button id="addButton">+</button>
+            <div class="cardContainer"></div>
+            <button id="create">Create</button>
+        </div>
+
+        <p>To see more, click on one of the tables below </p>
+        <p>or press the buttons above</p>
+    
+        <div class="container" id="tablesContainer"></div>
+
+        <div class="popup dropPopup">
+            <div class="closeButton">&times;</div>
+            <h2>Drop table</h2>
+            <label>Table name:
+                <input type="text" id="dropTableName" placeholder="Enter table name">
+            </label>
+            <button id="drop">Drop</button>
+        </div>
+    </main>
+
+    <script src="tables.js" defer></script>
+</body>
+</html>

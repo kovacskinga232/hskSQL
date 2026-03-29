@@ -1,0 +1,724 @@
+/* Base styling */
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #5e376d;
+    color: white;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+header {
+    background-color: #230c2d;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+header h1 {
+    font-size: 32px;
+    color: white;
+    margin: 0;
+    flex: 1 1 auto;
+}
+
+header button {
+    background-color: #986AA8;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    user-select: none;
+}
+
+header button:hover,
+header button:focus {
+    background-color: #2c114e;
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Main content */
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* WHERE Section */
+#whereSection {
+    background-color: #fefefe;
+    color: #333;
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease;
+}
+
+#whereSection:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+#whereSection h2 {
+    color: #2c114e;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* SELECT Container */
+.select-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #e6d4f3;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.select-container h1 {
+    color: #2c114e;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* Condition rows */
+.condition-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 12px;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.condition-row select,
+.condition-row input[type="text"] {
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    min-width: 100px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    color: #333;
+}
+
+.condition-row select:focus,
+.condition-row input[type="text"]:focus {
+    border-color: #986aa8;
+    box-shadow: 0 0 6px #b594d9;
+    outline: none;
+}
+
+.condition-row input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+    accent-color: #986aa8;
+}
+
+/* Buttons inside condition rows */
+.condition-row button {
+    background-color: #986AA8;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    user-select: none;
+}
+
+.condition-row button:hover,
+.condition-row button:focus {
+    background-color: #2c114e;
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Form action buttons */
+form button[type="button"] {
+    background-color: #986AA8;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    user-select: none;
+}
+
+form button[type="button"]:hover,
+form button[type="button"]:focus {
+    background-color: #2c114e;
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Results table */
+#queryResults {
+    overflow: auto;
+}
+#queryResults table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 14px;
+    color: #333;
+}
+
+#queryResults th,
+#queryResults td {
+    border: 1px solid #ccc;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#queryResults th {
+    background-color: #e6d4f3;
+    color: #2c114e;
+    font-weight: 700;
+    user-select: none;
+}
+
+#queryResults td:empty::after {
+    content: "\00a0";
+}
+
+#queryResults tr.empty-row td {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    background-color: #f9f9f9;
+}
+
+/* Checkbox container */
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.checkbox-container label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #e6d4f3;
+    color: #2c114e;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.checkbox-container label:hover {
+    background-color: #cbb6e3;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    background-color: #986AA8;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    user-select: none;
+}
+
+.pagination button:hover:not(:disabled),
+.pagination button:focus:not(:disabled) {
+    background-color: #2c114e;
+    outline: none;
+    transform: scale(1.1);
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* SELECT section tweaks */
+.select-container {
+    background-color: #e6d4f3;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.select-container h1 {
+    color: #2c114e;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.column-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.column-input {
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    width: 250px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.column-input:focus {
+    border-color: #986aa8;
+    box-shadow: 0 0 6px #b594d9;
+    outline: none;
+}
+
+/* JOIN section */
+.join-container {
+    background-color: #d5b8ec;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.join-container h1 {
+    color: #2c114e;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.jointable-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.join-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.join-row select {
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    background-color: white;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.join-row select:focus {
+    border-color: #986aa8;
+    box-shadow: 0 0 6px #b594d9;
+    outline: none;
+}
+
+.join-row input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+    accent-color: #986aa8;
+}
+
+.join-container button {
+    background-color: #986AA8;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    user-select: none;
+}
+
+.join-container button:hover,
+.join-container button:focus {
+    background-color: #2c114e;
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* GROUP BY section */
+.groupby-container {
+    margin-top: 24px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.groupby-row input {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.groupby-row input:focus {
+    border-color: #986aa8;
+    box-shadow: 0 0 6px #b594d9;
+    outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+    .condition-row,
+    .join-row,
+    .column-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    header {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    header h1 {
+        flex: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    #whereSection {
+        padding: 15px 20px;
+    }
+}
+
+/* Reuse button styles for remove button */
+.btn-remove {
+    background-color: #986AA8;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    user-select: none;
+}
+
+.btn-remove:hover,
+.btn-remove:focus {
+    background-color: #2c114e;
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* GROUP BY */
+.groupby-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.groupby-input.column-input {
+  flex: 0 0 250px; /* fixed width like your other inputs */
+}
+
+/* ORDER BY */
+.orderby-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.orderby-row input,
+.orderby-row select {
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+  background-color: white;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 250px;
+}
+
+.orderby-row input:focus,
+.orderby-row select:focus {
+  border-color: #986aa8;
+  box-shadow: 0 0 6px #b594d9;
+  outline: none;
+}
+
+/* REMOVE BUTTONS */
+.obb {
+    background-color: #986AA8;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    user-select: none;
+}
+
+.obb:hover,
+.obb:focus {
+    background-color: #2c114e;
+    outline: none;
+    transform: scale(1.05);
+}
+
+.sb {
+    background-color: #986AA8;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    user-select: none;
+}
+
+.sb:hover,
+.sb:focus {
+    background-color: #2c114e;
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* SELECT */
+.select-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.select-row input,
+.select-row select {
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+  background-color: white;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 250px;
+}
+
+.select-row input:focus,
+.select-row select:focus {
+  border-color: #986aa8;
+  box-shadow: 0 0 6px #b594d9;
+  outline: none;
+}
+
+.selectAddButton {
+    background-color: #986AA8;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    user-select: none;
+    margin-bottom: 5px;
+}
+
+.selectAddButton:hover,
+.selectAddButton:focus {
+    background-color: #2c114e;
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* ORDER BY */
+.orderb {
+    background-color: #986AA8;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    user-select: none;
+    max-width: 28px;
+    margin-bottom: 5px;
+}
+
+.orderb:hover,
+.orderb:focus {
+    background-color: #2c114e;
+    outline: none;
+    transform: scale(1.05);
+}
+
+.groupb {
+    background-color: #986AA8;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    user-select: none;
+    max-width: 28px;
+    margin-bottom: 5px;
+}
+
+.groupb:hover,
+.groupb:focus {
+    background-color: #2c114e;
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* EXEC */
+#exec {
+    background-color: #7ABA78;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    user-select: none;
+    margin-bottom: 5px;
+}
+
+#exec:hover {
+    background-color: #0A6847;
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Ensure consistent line-height */
+.join-row button,
+.condition-row button,
+.join-row select,
+.condition-row select,
+.condition-row input[type="text"],
+.join-row input[type="text"] {
+    line-height: 1.2;
+}
+
+/* GB Container */
+.groupby-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #e6d4f3;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.groupby-container h1 {
+    color: #2c114e;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* OB Container */
+.orderby-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #e6d4f3;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.orderby-container h1 {
+    color: #2c114e;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* WHERE Container */
+.where-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #e6d4f3;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.where-container h1 {
+    color: #2c114e;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.select-container,
+.join-container,
+.groupby-container,
+.orderby-container,
+.where-container {
+    width: 100%;
+    background-color: #e6d4f3;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+/* Section Headers */
+.select-container h1,
+.join-container h1,
+.groupby-container h1,
+.orderby-container h1,
+.where-container h1 {
+    color: #2c114e;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

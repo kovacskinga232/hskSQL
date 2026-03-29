@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select</title>
+  <link rel="stylesheet" href="select.css" />
+  <script src="select.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Query Builder</h1>
+    <button onclick="window.location.href = 'table_details.html'">Back to Table Details</button>
+  </header>
+
+  <main>
+    <section id="whereSection">
+      <div class="select-container">
+        <h1>SELECT</h1>
+        <div id="columnTextboxes" class="textbox-container"></div>
+      </div>
+
+      <div class="select-container">
+        <h2 id="tableTitle"></h2>
+      </div>
+
+      <div class="join-container">
+        <h1>JOIN</h1>
+        <button id="addJoin" onclick="addJoin(tableNames)">+</button>
+        <div id="joinTables" class="jointable-container"></div>
+      </div>
+
+      <div class="where-container">
+        <h2>WHERE</h2>
+
+        <form id="whereForm" onsubmit="return false;">
+          <button type="button" onclick="addCondition()">+</button>
+          <div id="conditionContainer"></div>
+        </form>
+      </div>
+
+      <div class="groupby-container">
+        <h1>GROUP BY</h1>
+        <button type="button" class="groupb" onclick="addGroupBy()">+</button>
+        <div id="groupByContainer"></div>
+      </div>
+
+      <div class="orderby-container">
+        <h1>ORDER BY</h1>
+        <button type="button" class="orderb" onclick="addOrderBy()">+</button>
+        <div id="orderByContainer"></div>
+      </div>
+
+      <button id="exec" type="button" onclick="submitQuery()">EXEC</button>
+
+      <div id="queryResults"></div>
+      <div id="pagination"></div>
+    </section>
+  </main>
+
+</body>
+</html>

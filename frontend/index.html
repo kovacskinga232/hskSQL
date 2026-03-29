@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hskSQL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>hskSQL Database Manager</h1>
+    </header>
+
+    <main>
+        <div id="container">
+            <label>Choose your database</label>
+            <select id="select"> </select>
+            <p>Or</p>
+            <button class="button" id="createButton">Create a new database</button>
+            <button class="button" id="dropButton">Drop an existing database</button>
+        </div>
+
+        <div class="popup createPopup">
+            <div class="closeButton">&times;</div>
+            <div class="popupForm">
+                <h2>Create database</h2>
+                <label>Database name:</label>
+                <input type="text" id="dbName" placeholder="Enter database name">
+                <button id="create">Create</button>
+            </div>
+        </div>
+
+        <div class="popup dropPopup">
+            <div class="closeButton">&times;</div>
+            <div class="popupForm">
+                <h2>Drop database</h2>
+                <label>Database name:</label>
+                <input type="text" id="dropDatabaseName" placeholder="Enter database name">
+                <button id="drop">Drop</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
